@@ -1,5 +1,11 @@
+import { Topbar } from './components'
+
 const App = () => {
-  return <div>App</div>
+  return (
+    <div>
+      <Topbar />
+    </div>
+  )
 }
 
 export default App
