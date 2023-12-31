@@ -1,11 +1,20 @@
+import { useState, useEffect } from 'react'
 import './Topbar.scss'
 import AppleLogo from '../../assets/apple-logo.png'
 import Wifi from '../../assets/wifi.png'
-import Airplay from '../../assets/wifi.png'
+import Airplay from '../../assets/airplay.png'
 import Battery from '../../assets/battery.png'
 import Search from '../../assets/search.png'
 
 const Topbar = () => {
+  const [date, setDate] = useState(new Date())
+
+  const weekday = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat']
+
+  useEffect(() => {
+    setInterval(() => setDate(new Date()), 1000)
+  }, [])
+
   return (
     <div className='Top-bar'>
       <div className='Top-items-left'>
@@ -20,11 +29,14 @@ const Topbar = () => {
       </div>
 
       <div className='Top-items-right'>
-        <img src={Wifi} alt='wifi-logo' id='topright-icon' />
-        <img src={Airplay} alt='airplay-logo' id='topright-icon' />
-        <img src={Battery} alt='battery-logo' id='topright-icon' />
-        <div className='date'>9:33</div>
-        <img src={Search} alt='search-logo' id='topright-icon' />
+        <img src={Wifi} alt='wifi-logo' />
+        <img src={Airplay} alt='airplay-logo' />
+        <img src={Battery} alt='battery-logo' />
+        <a className='date'>{weekday[date.getDay()]}</a>
+        <a className='date'>
+          {date.getHours()}:{date.getMinutes()}
+        </a>
+        <img src={Search} alt='search-logo' />
       </div>
     </div>
   )

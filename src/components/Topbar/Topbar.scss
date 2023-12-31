@@ -30,8 +30,23 @@
     }
   }
 
-  .Top-items-rigth {
+  .Top-items-right {
     display: flex;
-    flex-direction: row;
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+
+    img {
+      padding: 0 7px;
+      width: 20px;
+      height: 18px;
+    }
+
+    a {
+      color: white;
+      margin-bottom: 3px;
+      padding: 0 2px;
+      font-weight: 400;
+    }
   }
 }
