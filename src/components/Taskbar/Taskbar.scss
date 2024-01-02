@@ -1,0 +1,24 @@
+.task-bar {
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 33%;
+  background-color: rgba(99, 94, 94, 0.582);
+  height: 70px;
+  border-radius: 10px;
+  left: 0;
+  right: 0;
+  margin: 0px auto;
+
+  .task-bar-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    img {
+      height: 60px;
+      width: 60px;
+      margin: 3px;
+    }
+  }
+}

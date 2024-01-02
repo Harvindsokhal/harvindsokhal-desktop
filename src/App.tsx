@@ -1,9 +1,10 @@
-import { Topbar } from './components'
+import { Topbar, Taskbar } from './components'
 
 const App = () => {
   return (
     <div>
       <Topbar />
+      <Taskbar />
     </div>
   )
 }
