@@ -15,10 +15,15 @@
     flex-direction: row;
     justify-content: center;
 
-    img {
+    input {
       height: 60px;
       width: 60px;
       margin: 3px;
+    }
+
+    input:hover {
+      transform: translateY(-15px) scale(1.2);
+      transition: all 0.09s linear;
     }
   }
 }
