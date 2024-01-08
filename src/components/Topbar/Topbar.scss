@@ -70,22 +70,21 @@
 
     .wifi-icon .level-1 {
       animation: searching 2s ease infinite;
-      animation-delay: 0.15s;
+      animation-delay: 1.5s;
     }
 
     .wifi-icon .level-2 {
       animation: searching 2s ease infinite;
-      animation-delay: 0.7s;
+      animation-delay: 1s;
     }
 
     .wifi-icon .level-3 {
       animation: searching 2s ease infinite;
-      animation-delay: 1.25s;
+      animation-delay: 0.5s;
     }
 
     .wifi-icon .dot {
       animation: searching 2s ease infinite;
-      animation-delay: 0.75s;
     }
   }
 }
