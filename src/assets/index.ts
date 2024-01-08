@@ -9,7 +9,6 @@ const assets = {
   notesIcon: require('./notes.png'),
   safariIcon: require('./safari-icon.png'),
   searchIcon: require('./search.png'),
-  wifiIcon: require('./wifi.png'),
   messageIcon: require('./messages.png'),
 }
 
