@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './Topbar.scss'
 import assets from '../../assets'
+import Wifi from './Wifi'
 
 const Topbar = () => {
   const [date, setDate] = useState(new Date())
@@ -25,7 +26,8 @@ const Topbar = () => {
       </div>
 
       <div className='Top-items-right'>
-        <img src={assets.wifiIcon} alt='wifi-logo' />
+        <Wifi />
+        {/* <img src={assets.wifiIcon} alt='wifi-logo' /> */}
         <img src={assets.airplayIcon} alt='airplay-logo' />
         <img src={assets.batteryIcon} alt='battery-logo' />
         <a className='date'>{weekday[date.getDay()]}</a>

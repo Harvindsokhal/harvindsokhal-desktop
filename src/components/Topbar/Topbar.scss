@@ -36,6 +36,7 @@
     justify-content: end;
     align-items: center;
 
+    svg,
     img {
       padding: 0 7px;
       width: 20px;
@@ -47,6 +48,44 @@
       margin-bottom: 3px;
       padding: 0 2px;
       font-weight: 400;
+    }
+
+    @keyframes searching {
+      0% {
+        opacity: 0.2;
+      }
+
+      25% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.2;
+      }
+
+      100% {
+        opacity: 0.2;
+      }
+    }
+
+    .wifi-icon .level-1 {
+      animation: searching 2s ease infinite;
+      animation-delay: 0.15s;
+    }
+
+    .wifi-icon .level-2 {
+      animation: searching 2s ease infinite;
+      animation-delay: 0.7s;
+    }
+
+    .wifi-icon .level-3 {
+      animation: searching 2s ease infinite;
+      animation-delay: 1.25s;
+    }
+
+    .wifi-icon .dot {
+      animation: searching 2s ease infinite;
+      animation-delay: 0.75s;
     }
   }
 }
