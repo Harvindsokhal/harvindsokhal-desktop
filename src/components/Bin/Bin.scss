@@ -1,0 +1,18 @@
+.bin-container {
+  box-sizing: border-box;
+  height: 470px;
+  width: 690px;
+  display: flex;
+  margin: 140px auto;
+  background-color: rgb(63, 60, 60);
+  border-radius: 5px;
+
+  .bin-taskbar {
+    box-sizing: border-box;
+    width: 690px;
+    height: 30px;
+    background-color: rgb(58, 56, 56);
+    display: flex;
+    border-radius: 5px;
+  }
+}

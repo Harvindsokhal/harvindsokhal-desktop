@@ -1,10 +1,11 @@
-import { Topbar, Taskbar } from './components'
+import { Topbar, Taskbar, Bin } from './components'
 import './App.scss'
 
 const App = () => {
   return (
     <div className='container'>
       <Topbar />
+      <Bin />
       <Taskbar />
     </div>
   )
