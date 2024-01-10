@@ -1,18 +1,71 @@
+.bin-taskbar {
+  box-sizing: border-box;
+  width: 690px;
+  height: 30px;
+  background-color: rgb(58, 56, 56);
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+
+  #bin-title {
+    margin: auto;
+    padding-right: 50px;
+    color: white;
+  }
+  .browser-dot {
+    background-color: black;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin: 5px;
+
+    -webkit-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+  }
+
+  #dot-one {
+    background: #fc6058;
+    cursor: pointer;
+  }
+
+  #dot-two {
+    background: #fec02f;
+  }
+  #dot-three {
+    background: #2aca3e;
+  }
+}
+
 .bin-container {
   box-sizing: border-box;
   height: 470px;
   width: 690px;
-  display: flex;
   margin: 140px auto;
   background-color: rgb(63, 60, 60);
   border-radius: 5px;
 
-  .bin-taskbar {
-    box-sizing: border-box;
-    width: 690px;
-    height: 30px;
-    background-color: rgb(58, 56, 56);
+  .cv-container {
+    width: 24%;
+    height: 38%;
+    margin: 5px;
     display: flex;
-    border-radius: 5px;
+    flex-direction: column;
+
+    img {
+      cursor: pointer;
+      width: 160px;
+    }
+
+    p {
+      font-size: 14px;
+      color: white;
+      margin: -20px auto;
+    }
+  }
+
+  .cv-container:hover {
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.432);
   }
 }

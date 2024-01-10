@@ -10,6 +10,8 @@ const assets = {
   safariIcon: require('./safari-icon.png'),
   searchIcon: require('./search.png'),
   messageIcon: require('./messages.png'),
+  pdfIcon: require('./pdf-image.png'),
+  cv: require('./Harvind_Sokhal_CV.pdf'),
 }
 
 export default assets
