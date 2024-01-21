@@ -29,10 +29,10 @@ const Topbar = () => {
         <Wifi />
         <img src={assets.airplayIcon} alt='airplay-logo' />
         <img src={assets.batteryIcon} alt='battery-logo' />
-        <a className='date'>{weekday[date.getDay()]}</a>
-        <a className='date'>
+        <p className='date'>{weekday[date.getDay()]}</p>
+        <p className='date'>
           {date.getHours()}:{date.getMinutes()}
-        </a>
+        </p>
         <img src={assets.searchIcon} alt='search-logo' />
       </div>
     </div>

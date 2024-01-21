@@ -33,7 +33,7 @@
   .Top-items-right {
     display: flex;
     width: 100%;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
 
     svg,
@@ -43,9 +43,8 @@
       height: 18px;
     }
 
-    a {
+    p {
       color: white;
-      margin-bottom: 3px;
       padding: 0 2px;
       font-weight: 400;
     }

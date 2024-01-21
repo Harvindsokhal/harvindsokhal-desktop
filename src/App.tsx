@@ -3,7 +3,7 @@ import { Topbar, Taskbar, Bin } from './components'
 import './App.scss'
 
 const App = () => {
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
 
   return (
     <div className='container'>
