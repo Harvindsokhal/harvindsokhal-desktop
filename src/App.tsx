@@ -1,15 +1,17 @@
 import { useState } from 'react'
-import { Topbar, Taskbar, Bin } from './components'
+import { Topbar, Taskbar, Bin, Notes } from './components'
 import './App.scss'
 
 const App = () => {
-  const [show, setShow] = useState(false)
+  const [showNotes, setShowNotes] = useState<boolean>(false)
+  const [showBin, setShowBin] = useState<boolean>(false)
 
   return (
     <div className='container'>
       <Topbar />
-      {show ? <Bin show={show} setShow={setShow} /> : ''}
-      <Taskbar show={show} setShow={setShow} />
+      {showNotes ? <Notes show={showNotes} setShow={setShowNotes} /> : ''}
+      {showBin ? <Bin show={showBin} setShow={setShowBin} /> : ''}
+      <Taskbar show={showBin} setShow={setShowBin} />
     </div>
   )
 }
