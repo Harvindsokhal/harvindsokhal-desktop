@@ -1,13 +1,9 @@
-import { Dispatch, FunctionComponent, SetStateAction } from 'react'
+import { FunctionComponent } from 'react'
+import { IShowProps } from '../../interfaces/app_interfaces'
 import Draggable from 'react-draggable'
 import './Notes.scss'
 
-interface IProps {
-  show: boolean
-  setShow: Dispatch<SetStateAction<boolean>>
-}
-
-const Notes: FunctionComponent<IProps> = ({ show, setShow }) => {
+const Notes: FunctionComponent<IShowProps> = ({ show, setShow }) => {
   return (
     <Draggable>
       <div className='notes-container'>
@@ -15,7 +11,7 @@ const Notes: FunctionComponent<IProps> = ({ show, setShow }) => {
           <div
             id='dot-one'
             className='browser-dot'
-            onClick={() => setShow(!show)}
+            onClick={() => setShow({ ...show, notes: !show.notes })}
           />
           <div id='dot-two' className='browser-dot' />
           <div id='dot-three' className='browser-dot' />

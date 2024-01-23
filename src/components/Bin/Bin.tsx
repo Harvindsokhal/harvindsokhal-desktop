@@ -1,20 +1,18 @@
-import { Dispatch, FunctionComponent, SetStateAction } from 'react'
+import { FunctionComponent } from 'react'
+import { IShowProps } from '../../interfaces/app_interfaces'
 import Draggable from 'react-draggable'
 import assets from '../../assets'
 import './Bin.scss'
 
-interface IProps {
-  show: boolean
-  setShow: Dispatch<SetStateAction<boolean>>
-}
 
-const Bin: FunctionComponent<IProps> = ({ show, setShow }) => {
+
+const Bin: FunctionComponent<IShowProps> = ({ show, setShow }) => {
   return (
     <Draggable>
       <div className='bin-container'>
         <div className='bin-taskbar'>
           <div
-            onClick={() => setShow(!show)}
+            onClick={() => setShow({...show, bin: !show.bin})}
             id='dot-one'
             className='browser-dot'
           />
