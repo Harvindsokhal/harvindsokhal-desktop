@@ -44,9 +44,16 @@
     }
 
     p {
+      column-gap: 5px;
       color: white;
       padding: 0 2px;
       font-weight: 400;
+      font-size: 15px;
+    }
+
+    .time {
+      padding-left:  7px;
+      padding-right: 15px;
     }
 
     @keyframes searching {
