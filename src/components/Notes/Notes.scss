@@ -1,18 +1,3 @@
-.notes-taskbar {
-  box-sizing: border-box;
-  width: 690px;
-  height: 30px;
-  background-color: rgb(58, 56, 56);
-  display: flex;
-  align-items: center;
-
-  #notes-title {
-    color: white;
-    margin: auto;
-    padding-right: 50px;
-  }
-}
-
 .notes-container {
   width: 690px;
   height: 500px;
@@ -20,4 +5,24 @@
   margin: auto;
   margin-left: 540px;
   margin-top: 150px;
+
+  .notes-taskbar {
+    width: 690px;
+    height: 30px;
+    background-color: rgb(58, 56, 56);
+    display: flex;
+    align-items: center;
+  
+    #notes-title {
+      color: white;
+      margin: auto;
+      padding-right: 50px;
+    }
+  }
+
+  .notes-content {
+    width: 30%;
+    height: 100%;
+    background-color: red;
+  }
 }

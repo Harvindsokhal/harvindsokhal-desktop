@@ -1,9 +1,9 @@
 import { FunctionComponent } from "react";
-import { IShowProps } from "../../interfaces/app_interfaces";
+import { IShow, IShowProps } from "../../interfaces/app_interfaces";
 import "./Taskbar.scss";
 import assets from "../../assets";
 
-const Taskbar: FunctionComponent<IShowProps> = ({ show, setShow }) => {
+const Taskbar: FunctionComponent<IShowProps> = ({ setShow }) => {
   return (
     <div className="task-bar">
       <div className="task-bar-items">
@@ -11,7 +11,19 @@ const Taskbar: FunctionComponent<IShowProps> = ({ show, setShow }) => {
         <input type="image" src={assets.newsIcon} alt="news-icon" />
         <input type="image" src={assets.appStoreIcon} alt="appstore-icon" />
         <input
-          onClick={() => setShow({ ...show, notes: !show.notes })}
+          onClick={() =>
+            setShow((prevState) => {
+              const nextState = {} as IShow;
+              Object.keys(prevState).forEach((key) => {
+                if (key === "notes") {
+                  nextState[key as keyof IShow] = !prevState.notes;
+                } else {
+                  nextState[key as keyof IShow] = false;
+                }
+              });
+              return nextState;
+            })
+          }
           type="image"
           src={assets.notesIcon}
           alt="notes-icon"
@@ -19,7 +31,19 @@ const Taskbar: FunctionComponent<IShowProps> = ({ show, setShow }) => {
         <input type="image" src={assets.safariIcon} alt="safari-icon" />
         <input type="image" src={assets.folderIcon} alt="folder-icon" />
         <input
-          onClick={() => setShow({ ...show, bin: !show.bin })}
+          onClick={() =>
+            setShow((prevState) => {
+              const nextState = {} as IShow;
+              Object.keys(prevState).forEach((key) => {
+                if (key === "bin") {
+                  nextState[key as keyof IShow] = !prevState.bin;
+                } else {
+                  nextState[key as keyof IShow] = false;
+                }
+              });
+              return nextState;
+            })
+          }
           type="image"
           src={assets.binIcon}
           alt="bin-icon"
