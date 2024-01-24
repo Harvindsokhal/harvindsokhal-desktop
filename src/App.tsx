@@ -5,7 +5,7 @@ import "./App.scss";
 
 const App = () => {
   const [show, setShow] = useState<IShow>({
-    notes: true,
+    notes: false,
     bin: false,
   });
 

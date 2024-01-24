@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Topbar.scss";
-import assets from "../../assets";
+import { assets } from "../../assets";
 import Wifi from "./Wifi";
 
 const Topbar = () => {

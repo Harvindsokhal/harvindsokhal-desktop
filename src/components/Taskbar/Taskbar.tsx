@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import { IShow, IShowProps } from "../../interfaces/app_interfaces";
 import "./Taskbar.scss";
-import assets from "../../assets";
+import { assets } from "../../assets";
 
 const Taskbar: FunctionComponent<IShowProps> = ({ setShow }) => {
   return (

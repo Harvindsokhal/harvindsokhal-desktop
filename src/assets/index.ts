@@ -1,4 +1,4 @@
-const assets = {
+export const assets = {
   airplayIcon: require('./airplay.png'),
   appStoreIcon: require('./app-store.png'),
   appleLogo: require('./apple-logo.png'),
@@ -14,4 +14,8 @@ const assets = {
   cv: require('./Harvind_Sokhal_CV.pdf'),
 }
 
-export default assets
+export const notesAssets = {
+  smallSectionIcons: require('./notes-small-sec-icons.png'),
+  largeSectionIcons: require('./notes-large-section-icons.png')
+} 
+

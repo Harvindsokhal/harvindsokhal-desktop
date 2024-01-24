@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import { IShowProps } from "../../interfaces/app_interfaces";
 import Draggable from "react-draggable";
-import assets from "../../assets";
+import { assets } from "../../assets";
 import "./Bin.scss";
 
 const Bin: FunctionComponent<IShowProps> = ({ setShow }) => {
