@@ -16,6 +16,9 @@ export const assets = {
 
 export const notesAssets = {
   smallSectionIcons: require('./notes-small-sec-icons.png'),
-  largeSectionIcons: require('./notes-large-section-icons.png')
+  largeSectionIcons: require('./notes-large-section-icons.png'),
+  typescriptIcon: require('./typescript.png'),
+  kotlinIcon: require('./kotlin-icon.png')
+
 } 
 

@@ -1,17 +1,10 @@
-.notes-container {
-  display: flex;
-  flex-direction: column;
+.notes-app {
   width: 880px;
-  height: 650px;
-  background-color: rgb(30, 30, 31);
-
   margin: auto;
-  margin-left: 540px;
-  margin-top: 150px;
-  border-radius: 10px;
+  margin-top: 50px;
 
   .notes-taskbar {
-    width: 880px;
+    width: 100%;
     height: 50px;
     background-color: rgb(31, 27, 37);
     display: flex;
@@ -62,97 +55,118 @@
 
   .notes-content {
     display: flex;
-    flex-direction: column;
-    width: 266px;
-    height: 100%;
-    background-color: rgb(20, 15, 26);
+    background-color: rgb(30, 30, 31);
+    height: 600px;
 
-    .notes-sub-title {
-      width: 100%;
-      height: 30px;
-      background-color: rgb(31, 27, 37);
-      border-bottom: 1px solid rgb(82, 82, 82);
-      border-top: 1px solid black;
-      border-right: 1px solid black;
+    .sidenotes-content {
+      display: flex;
+      flex-direction: column;
+      width: 266px;
+      height: 100%;
+      background-color: rgb(20, 15, 26);
 
-      p {
+      .sidenotes-sub-title {
+        width: 100%;
+        height: 30px;
+        background-color: rgb(31, 27, 37);
+        border-bottom: 1px solid rgb(82, 82, 82);
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+
+        p {
+          color: rgb(180, 180, 180);
+          font-size: 12px;
+          margin-left: 15px;
+        }
+      }
+
+      .main-note-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: rgb(154, 62, 163);
+        color: white;
+        width: 90%;
+        height: 9%;
+        border-radius: 5px;
+        font-size: 12px;
+        margin: 10px auto;
+
+        .main-note-content {
+          margin-left: 20px;
+
+          p {
+            margin: 0;
+          }
+
+          .main-note-text {
+            display: flex;
+          }
+
+          .main-note-title {
+            font-weight: 700;
+            margin-right: 5px;
+          }
+
+          .main-note-subtext {
+            color: rgb(218, 218, 218);
+          }
+        }
+      }
+
+      .subnotes-date {
         color: rgb(180, 180, 180);
         font-size: 12px;
         margin-left: 15px;
+        margin-top: 10px;
+      }
+
+      .note-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: white;
+        width: 90%;
+        height: 9%;
+        font-size: 12px;
+        margin: 2px auto;
+        border-bottom: 1px solid rgb(53, 53, 53);
+
+        .main-note-content {
+          margin-left: 20px;
+
+          p {
+            margin: 0;
+          }
+
+          .main-note-text {
+            display: flex;
+          }
+
+          .main-note-title {
+            font-weight: 700;
+            margin-right: 5px;
+          }
+
+          .main-note-subtext {
+            color: rgb(218, 218, 218);
+          }
+        }
       }
     }
 
-    .main-note-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background-color: rgb(154, 62, 163);
+    .big-note {
+      flex: 1;
       color: white;
-      width: 90%;
-      height: 9%;
-      border-radius: 5px;
-      font-size: 12px;
-      margin: 10px auto;
+      margin-left: 35px;
 
-      .main-note-content {
-        margin-left: 20px;
-
-        p {
-          margin: 0;
-        }
-
-        .main-note-text {
-          display: flex;
-        }
-
-        .main-note-title {
-          font-weight: 700;
-          margin-right: 5px;
-        }
-
-        .main-note-subtext {
-          color: rgb(218, 218, 218);
-        }
+      h3 {
+        margin: 0;
       }
-    }
 
-    .subnotes-date {
-      color: rgb(180, 180, 180);
-      font-size: 12px;
-      margin-left: 15px;
-      margin-top: 10px;
-    }
-
-    .note-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      color: white;
-      width: 90%;
-      height: 9%;
-      font-size: 12px;
-      margin: 2px auto;
-      border-bottom: 1px solid rgb(53, 53, 53);
-
-      .main-note-content {
-        margin-left: 20px;
-
-        p {
-          margin: 0;
-        }
-
-        .main-note-text {
-          display: flex;
-        }
-
-        .main-note-title {
-          font-weight: 700;
-          margin-right: 5px;
-        }
-
-        .main-note-subtext {
-          color: rgb(218, 218, 218);
-        }
+      img {
+        width: 15px;
+        height: 15px;
       }
     }
   }
