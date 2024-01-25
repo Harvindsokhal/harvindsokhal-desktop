@@ -18,7 +18,25 @@ export const notesAssets = {
   smallSectionIcons: require('./notes-small-sec-icons.png'),
   largeSectionIcons: require('./notes-large-section-icons.png'),
   typescriptIcon: require('./typescript.png'),
-  kotlinIcon: require('./kotlin-icon.png')
-
-} 
-
+  htmlIcon: require('./htmlIcon.png'),
+  cssIcon: require('./cssIcon.webp'),
+  kotlinIcon: require('./kotlin-icon.png'),
+  pythonIcon: require('./pythonIcon.png'),
+  scalaIcon: require('./scalaIcon.png'),
+  javaIcon: require('./javaIcon.jpg'),
+  reactIcon: require('./reactIcon.png'),
+  expressIcon: require('./expressIcon.png'),
+  nestIcon: require('./nestIcon.png'),
+  graphqlIcon: require('./graphqlIcon.png'),
+  springIcon: require('./springIcon.png'),
+  jiraIcon: require('./jiraIcon.svg').default,
+  prettierIcon: require('./prettierIcon.svg').default,
+  eslintIcon: require('./eslintIcon.png'),
+  gitIcon: require('./gitIcon.png'),
+  dockerIcon: require('./dockerIcon.png'),
+  kubernetesIcon: require('./kubernetesIcon.png'),
+  circleciIcon: require('./circleciIcon.png'),
+  storybookIcon: require('./storybookIcon.png'),
+  jestIcon: require('./jestIcon.png'),
+  datadogIcon: require('./datadogIcon.png'),
+}
