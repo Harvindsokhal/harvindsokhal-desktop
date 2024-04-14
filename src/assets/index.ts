@@ -37,6 +37,6 @@ export const notesAssets = {
   kubernetesIcon: require('./kubernetesIcon.png'),
   circleciIcon: require('./circleciIcon.png'),
   storybookIcon: require('./storybookIcon.png'),
-  jestIcon: require('./jestIcon.png'),
+  jestIcon: require('./jestIcon-min.png'),
   datadogIcon: require('./datadogIcon.png'),
 }
