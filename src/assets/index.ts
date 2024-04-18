@@ -40,3 +40,13 @@ export const notesAssets = {
   jestIcon: require('./jestIcon-min.png'),
   datadogIcon: require('./datadogIcon.png'),
 }
+
+export const appStoreAssets = {
+  discoverIcon: require('./Discover-store.png'),
+  createIcon: require('./Create-store.png'),
+  workIcon: require('./Work-store.png'),
+  playIcon: require('./Play-store.png'),
+  developIcon: require('./Develop-store.png'),
+  categoriesIcon: require('./Catagories-store.png'),
+  updateIcon: require('./Updates-store.png'),
+}
