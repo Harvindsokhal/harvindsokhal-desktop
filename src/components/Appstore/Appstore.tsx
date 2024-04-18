@@ -1,7 +1,8 @@
 import Draggable from 'react-draggable'
-import './Appstore.scss'
+import { appStoreAssets } from '../../assets'
 import { FunctionComponent } from 'react'
 import { IShowProps } from '../../interfaces/app_interfaces'
+import './Appstore.scss'
 
 const Appstore: FunctionComponent<IShowProps> = ({ setShow }) => {
   return (
@@ -25,6 +26,36 @@ const Appstore: FunctionComponent<IShowProps> = ({ setShow }) => {
         <div className="side-bar-content">
           <div className="searchbox-container">
             <input type="text" size={40} placeholder="Search..." />
+          </div>
+          <div className="catagories-left">
+            <p>
+              <img src={appStoreAssets.discoverIcon} alt="discover-logo" />{' '}
+              Disover
+            </p>
+            <p>
+              <img src={appStoreAssets.createIcon} alt="create-logo" /> Create
+            </p>
+            <p>
+              <img src={appStoreAssets.workIcon} alt="work-logo" /> Work
+            </p>
+            <p>
+              <img src={appStoreAssets.playIcon} alt="play-logo" /> Play
+            </p>
+            <p>
+              <img src={appStoreAssets.developIcon} alt="develop-logo" />{' '}
+              Develop
+            </p>
+            <p>
+              <img src={appStoreAssets.categoriesIcon} alt="catagories-logo" />{' '}
+              Catagories
+            </p>
+            <div className="update-sidebar">
+              <p>
+                <img src={appStoreAssets.updateIcon} alt="updates-logo" />{' '}
+                Updates
+              </p>
+              <p className="update-pill">2</p>
+            </div>
           </div>
         </div>
       </div>

@@ -6,7 +6,6 @@
   overflow: hidden;
 
   .app-store-taskbar {
-    display: flex;
     height: 50px;
 
     .dots-container {
@@ -17,6 +16,7 @@
 
   .side-bar-content {
     display: flex;
+    flex-direction: column;
     width: 350px;
     height: 100%;
 
@@ -24,6 +24,7 @@
       padding-left: 35px;
       color: white;
       border-bottom: none;
+      height: 30px;
 
       input {
         cursor: pointer;
@@ -37,6 +38,39 @@
 
         &::placeholder {
           color: rgba(255, 255, 255, 0.692);
+        }
+      }
+    }
+
+    .catagories-left {
+      height: 300px;
+      width: 300px;
+      color: rgba(255, 255, 255, 0.685);
+      font-weight: 600;
+      font-size: 22px;
+      margin-left: 32px;
+
+      img {
+        height: 25px;
+        width: 25px;
+        margin: -3px 10px;
+      }
+      .update-sidebar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 30px;
+        width: 250px;
+
+        .update-pill {
+          width: 40px;
+          height: 20px;
+          background-color: rgb(231, 220, 220);
+          font-size: 15px;
+          text-align: center;
+          border-radius: 10px;
+          color: rgba(0, 0, 0, 0.61);
+          margin-left: 70px;
         }
       }
     }
