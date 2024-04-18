@@ -1,13 +1,23 @@
 import Draggable from 'react-draggable'
 import './Appstore.scss'
+import { FunctionComponent } from 'react'
+import { IShowProps } from '../../interfaces/app_interfaces'
 
-const Appstore = () => {
+const Appstore: FunctionComponent<IShowProps> = ({ setShow }) => {
   return (
     <Draggable>
       <div className="app-store-main">
         <div className="app-store-taskbar">
           <div className="dots-container">
-            <div id="dot-one" className="browser-dot" />
+            <div
+              id="dot-one"
+              className="browser-dot"
+              onClick={() =>
+                setShow((prevState) => {
+                  return { ...prevState, appstore: !prevState.appstore }
+                })
+              }
+            />
             <div id="dot-two" className="browser-dot" />
             <div id="dot-three" className="browser-dot" />
           </div>

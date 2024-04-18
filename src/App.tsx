@@ -7,7 +7,7 @@ const App = () => {
   const [show, setShow] = useState<IShow>({
     notes: false,
     bin: false,
-    appstore: true,
+    appstore: false,
   })
 
   return (
@@ -15,7 +15,7 @@ const App = () => {
       <Topbar />
       {show.notes ? <Notes setShow={setShow} /> : ''}
       {show.bin ? <Bin setShow={setShow} /> : ''}
-      {show.appstore ? <Appstore /> : ''}
+      {show.appstore ? <Appstore setShow={setShow} /> : ''}
       <Taskbar setShow={setShow} />
     </div>
   )
