@@ -29,32 +29,70 @@ const Appstore: FunctionComponent<IShowProps> = ({ setShow }) => {
           </div>
           <div className="catagories-left">
             <p>
-              <img src={appStoreAssets.discoverIcon} alt="discover-logo" />{' '}
+              <img
+                id="catagories-icon"
+                src={appStoreAssets.discoverIcon}
+                alt="discover-logo"
+              />{' '}
               Disover
             </p>
             <p>
-              <img src={appStoreAssets.createIcon} alt="create-logo" /> Create
+              <img
+                id="catagories-icon"
+                src={appStoreAssets.createIcon}
+                alt="create-logo"
+              />{' '}
+              Create
             </p>
             <p>
-              <img src={appStoreAssets.workIcon} alt="work-logo" /> Work
+              <img
+                id="catagories-icon"
+                src={appStoreAssets.workIcon}
+                alt="work-logo"
+              />{' '}
+              Work
             </p>
             <p>
-              <img src={appStoreAssets.playIcon} alt="play-logo" /> Play
+              <img
+                id="catagories-icon"
+                src={appStoreAssets.playIcon}
+                alt="play-logo"
+              />{' '}
+              Play
             </p>
             <p>
-              <img src={appStoreAssets.developIcon} alt="develop-logo" />{' '}
+              <img
+                id="catagories-icon"
+                src={appStoreAssets.developIcon}
+                alt="develop-logo"
+              />{' '}
               Develop
             </p>
             <p>
-              <img src={appStoreAssets.categoriesIcon} alt="catagories-logo" />{' '}
+              <img
+                id="catagories-icon"
+                src={appStoreAssets.categoriesIcon}
+                alt="catagories-logo"
+              />{' '}
               Catagories
             </p>
             <div className="update-sidebar">
               <p>
-                <img src={appStoreAssets.updateIcon} alt="updates-logo" />{' '}
+                <img
+                  id="catagories-icon"
+                  src={appStoreAssets.updateIcon}
+                  alt="updates-logo"
+                />{' '}
                 Updates
               </p>
               <p className="update-pill">2</p>
+            </div>
+            <div className="profile-left">
+              <img src={appStoreAssets.profileIcon} alt="profile-icon" />
+              <div className="profile-text-container">
+                <p>Harvind Sokhal</p>
+                <p>£9999.99 Credit</p>
+              </div>
             </div>
           </div>
         </div>

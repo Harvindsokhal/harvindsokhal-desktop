@@ -50,7 +50,7 @@
       font-size: 22px;
       margin-left: 32px;
 
-      img {
+      #catagories-icon {
         height: 25px;
         width: 25px;
         margin: -3px 10px;
@@ -72,6 +72,30 @@
           color: rgba(0, 0, 0, 0.61);
           margin-left: 70px;
         }
+      }
+    }
+  }
+
+  .profile-left {
+    margin-top: 20px;
+    margin-left: 10px;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+
+    img {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+    }
+    .profile-text-container {
+      display: flex;
+      flex-direction: column;
+      margin: 15px 20px;
+
+      p {
+        margin: 1px 2px;
+        font-size: 16px;
       }
     }
   }
