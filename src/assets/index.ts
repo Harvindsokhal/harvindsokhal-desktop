@@ -50,4 +50,6 @@ export const appStoreAssets = {
   categoriesIcon: require('./Catagories-store.png'),
   updateIcon: require('./Updates-store.png'),
   profileIcon: require('./profile-store.png'),
+  highlight1: require('./highlight1.png'),
+  highlight2: require('./highlight2.jpeg'),
 }
