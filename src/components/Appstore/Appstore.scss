@@ -158,5 +158,80 @@
         width: 450px;
       }
     }
+
+    .projects {
+      width: 90%;
+      margin: -30px auto;
+      height: 100%;
+
+      p {
+        color: rgb(231, 231, 231);
+        font-weight: 450;
+        font-size: 22px;
+      }
+
+      .row {
+        display: flex;
+        margin: 20px 36px;
+        justify-content: space-between;
+
+        &.one {
+          padding-bottom: 20px;
+          margin: 20px 44px;
+        }
+
+        .app {
+          display: flex;
+          flex-direction: row;
+
+          img {
+            height: 90px;
+            width: 90px;
+            border-radius: 20px;
+          }
+
+          .text-container {
+            &.top {
+              box-sizing: border-box;
+              border-bottom: 0.5px solid rgba(255, 255, 255, 0.226);
+              border-width: 0.5px;
+            }
+
+            margin: -10px 30px;
+            p {
+              margin: 1px;
+            }
+          }
+
+          #des1 {
+            font-size: 15px;
+            font-weight: 450;
+          }
+
+          #des2 {
+            font-size: 13px;
+            color: rgb(182, 179, 179);
+            text-wrap: nowrap;
+          }
+
+          .open-app {
+            margin-top: 20px;
+            display: flex;
+            height: 30px;
+            width: 70px;
+            background-color: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+            p {
+              color: rgb(110, 108, 108);
+              font-weight: 650;
+              font-size: 15px;
+
+              margin: auto;
+            }
+          }
+        }
+      }
+    }
   }
 }

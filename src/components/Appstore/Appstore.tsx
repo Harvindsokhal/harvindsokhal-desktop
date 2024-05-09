@@ -116,6 +116,73 @@ const Appstore: FunctionComponent<IShowProps> = ({ setShow }) => {
               <img src={appStoreAssets.highlight2} alt="highlight2" />
             </div>
           </div>
+          <div className="projects">
+            <p>Past Projects</p>
+            <div className="row one">
+              <div className="app">
+                <img alt="flappy-icon" src={appStoreAssets.flappyBirdIcon} />
+                <div className="text-container top">
+                  <p id="des1">AI Flappy Bird</p>
+                  <p id="des2">AI Bot Plays Flappy Bird</p>
+                  <div className="open-app">
+                    <p>Open</p>
+                  </div>
+                </div>
+              </div>
+              <div className="app">
+                <img alt="flappy-icon" src={appStoreAssets.oculusIcon} />
+                <div className="text-container top">
+                  <p id="des1">Water Aid VR Game</p>
+                  <p id="des2">A Custom Game With VR</p>
+                  <div className="open-app">
+                    <p>Open</p>
+                  </div>
+                </div>
+              </div>
+              <div className="app">
+                <img alt="flappy-icon" src={appStoreAssets.pokemonIcon} />
+                <div className="text-container top">
+                  <p id="des1">Pokemini</p>
+                  <p id="des2">A Custom Pokemon game</p>
+                  <div className="open-app">
+                    <p>Open</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="row two">
+              <div className="app">
+                <img alt="flappy-icon" src={appStoreAssets.scrapperIcon} />
+                <div className="text-container">
+                  <p id="des1">Auto Poster</p>
+                  <p id="des2">Facts social media poster</p>
+                  <div className="open-app">
+                    <p>Open</p>
+                  </div>
+                </div>
+              </div>
+              <div className="app">
+                <img alt="flappy-icon" src={appStoreAssets.musicIcon} />
+                <div className="text-container">
+                  <p id="des1">Party Music Player</p>
+                  <p id="des2">Full Stack Music Player</p>
+                  <div className="open-app">
+                    <p>Open</p>
+                  </div>
+                </div>
+              </div>
+              <div className="app">
+                <img alt="flappy-icon" src={appStoreAssets.snakeIcon} />
+                <div className="text-container">
+                  <p id="des1">Snake Game</p>
+                  <p id="des2">A JSX Snake Game</p>
+                  <div className="open-app">
+                    <p>Open</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </Draggable>
