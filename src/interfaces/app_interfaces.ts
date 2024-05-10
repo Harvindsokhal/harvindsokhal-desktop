@@ -4,6 +4,7 @@ export interface IShow {
   notes: boolean
   bin: boolean
   appstore: boolean
+  safari: boolean
 }
 
 export interface IShowProps {

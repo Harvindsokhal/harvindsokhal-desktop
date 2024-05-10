@@ -59,3 +59,22 @@ export const appStoreAssets = {
   musicIcon: require('./music.png'),
   snakeIcon: require('./snake.png'),
 }
+
+export const safariAssets = {
+  sidebarIcon: require('./sidebar.png'),
+  backarrowIcon: require('./backarrow.png'),
+  frontarrowIcon: require('./frontarrow.png'),
+  shieldIcon: require('./shield.png'),
+  lockIcon: require('./lock.png'),
+  refreshIcon: require('./refresh.png'),
+  cloudIcon: require('./cloud.png'),
+  shareIcon: require('./share.png'),
+  plusIcon: require('./plus.png'),
+  tabsIcon: require('./tabs.png'),
+  xIcon: require('./x-icon.png'),
+  linkedinIcon: require('./linkedin-icon.png'),
+  threadsIcon: require('./threads-icon.png'),
+  xScreenshot: require('./x-screenshot.png'),
+  linkedinScreenshot: require('./linkedin-screenshot.png'),
+  threadsScreenshot: require('./threads-screenshot.png'),
+}

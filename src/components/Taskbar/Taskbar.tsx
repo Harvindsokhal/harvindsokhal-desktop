@@ -45,7 +45,24 @@ const Taskbar: FunctionComponent<IShowProps> = ({ setShow }) => {
           src={assets.notesIcon}
           alt="notes-icon"
         />
-        <input type="image" src={assets.safariIcon} alt="safari-icon" />
+        <input
+          onClick={() =>
+            setShow((prevState) => {
+              const nextState = {} as IShow
+              Object.keys(prevState).forEach((key) => {
+                if (key === 'safari') {
+                  nextState[key as keyof IShow] = !prevState.notes
+                } else {
+                  nextState[key as keyof IShow] = false
+                }
+              })
+              return nextState
+            })
+          }
+          type="image"
+          src={assets.safariIcon}
+          alt="safari-icon"
+        />
         <input type="image" src={assets.folderIcon} alt="folder-icon" />
         <input
           onClick={() =>
