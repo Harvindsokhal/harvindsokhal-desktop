@@ -8,7 +8,7 @@ const App = () => {
     notes: false,
     bin: false,
     appstore: false,
-    safari: true,
+    safari: false,
   })
 
   return (
