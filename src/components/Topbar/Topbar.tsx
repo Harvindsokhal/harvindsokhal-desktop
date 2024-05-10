@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
-import "./Topbar.scss";
-import { assets } from "../../assets";
-import Wifi from "./Wifi";
+import { useState, useEffect } from 'react'
+import './Topbar.scss'
+import { assets } from '../../assets'
+import Wifi from './Wifi'
 
 const Topbar = () => {
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState(new Date())
 
-  const weekday = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
-  const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"];
+  const weekday = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat']
+  const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']
 
   useEffect(() => {
-    setInterval(() => setDate(new Date()), 1000);
-  }, []);
+    setInterval(() => setDate(new Date()), 1000)
+  }, [])
 
   return (
     <div className="Top-bar">
@@ -21,7 +21,7 @@ const Topbar = () => {
         <p>File</p>
         <p>Edit</p>
         <p>View</p>
-        <p>Go</p>
+        <p>History</p>
         <p>Window</p>
         <p>Help</p>
       </div>
@@ -37,11 +37,11 @@ const Topbar = () => {
         <p>{month[date.getMonth()]}</p>
         <p className="time">
           {date.getHours()}:
-          {date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()}
+          {date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()}
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Topbar;
+export default Topbar
