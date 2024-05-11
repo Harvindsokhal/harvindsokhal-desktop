@@ -1,12 +1,12 @@
 import { FunctionComponent } from 'react'
 import { IShow, IShowProps } from '../../interfaces/app_interfaces'
 import { assets } from '../../assets'
-import './Taskbar.scss'
+import './Dock.scss'
 
-const Taskbar: FunctionComponent<IShowProps> = ({ setShow }) => {
+const Dock: FunctionComponent<IShowProps> = ({ setShow }) => {
   return (
-    <div className="task-bar">
-      <div className="task-bar-items">
+    <div className="dock">
+      <div className="dock-items">
         <input type="image" src={assets.messageIcon} alt="message-icon" />
         <input type="image" src={assets.newsIcon} alt="news-icon" />
         <input
@@ -87,4 +87,4 @@ const Taskbar: FunctionComponent<IShowProps> = ({ setShow }) => {
   )
 }
 
-export default Taskbar
+export default Dock
