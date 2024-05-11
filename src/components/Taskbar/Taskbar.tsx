@@ -51,7 +51,7 @@ const Taskbar: FunctionComponent<IShowProps> = ({ setShow }) => {
               const nextState = {} as IShow
               Object.keys(prevState).forEach((key) => {
                 if (key === 'safari') {
-                  nextState[key as keyof IShow] = !prevState.notes
+                  nextState[key as keyof IShow] = !prevState.safari
                 } else {
                   nextState[key as keyof IShow] = false
                 }
