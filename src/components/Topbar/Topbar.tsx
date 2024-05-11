@@ -21,7 +21,7 @@ const Topbar = () => {
         <p>File</p>
         <p>Edit</p>
         <p>View</p>
-        <p>History</p>
+        <p>Go</p>
         <p>Window</p>
         <p>Help</p>
       </div>
