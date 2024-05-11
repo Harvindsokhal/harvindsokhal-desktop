@@ -5,6 +5,7 @@ export interface IShow {
   bin: boolean
   appstore: boolean
   safari: boolean
+  message: boolean
 }
 
 export interface IShowProps {

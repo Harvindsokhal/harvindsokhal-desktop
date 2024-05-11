@@ -49,7 +49,7 @@ const Topbar = () => {
         <p>{date.getDate()}</p>
         <p>{month[date.getMonth()]}</p>
         <p className="time">
-          {date.getHours()}:
+          {date.getHours() < 1 ? '0' + date.getHours() : date.getHours()}:
           {date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()}
         </p>
       </div>

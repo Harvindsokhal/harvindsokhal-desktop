@@ -78,3 +78,9 @@ export const safariAssets = {
   linkedinScreenshot: require('./linkedin-screenshot.png'),
   threadsScreenshot: require('./threads-screenshot.png'),
 }
+
+export const messageAssets = {
+  editIcon: require('./edit-button.png'),
+  sendIcon: require('./send.png'),
+  addIcon: require('./add.png'),
+}
