@@ -23,7 +23,7 @@ const App = () => {
     bin: false,
     appstore: false,
     safari: false,
-    message: true,
+    message: false,
   })
 
   return (
