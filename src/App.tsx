@@ -15,7 +15,8 @@ import './App.scss'
 const App = () => {
   const emailjsPulicKey: string = process.env
     .REACT_APP_EMAIL_PUBLIC_KEY as string
-  useEffect(() => emailjs.init(emailjsPulicKey), [])
+
+  useEffect(() => emailjs.init(emailjsPulicKey))
 
   const [show, setShow] = useState<IShow>({
     notes: false,
