@@ -83,4 +83,5 @@ export const messageAssets = {
   editIcon: require('./edit-button.png'),
   sendIcon: require('./send.png'),
   addIcon: require('./add.png'),
+  messageAppstoreIcon: require('./message-appstore-icon.png'),
 }

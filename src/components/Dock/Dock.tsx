@@ -7,7 +7,24 @@ const Dock: FunctionComponent<IShowProps> = ({ setShow }) => {
   return (
     <div className="dock">
       <div className="dock-items">
-        <input type="image" src={assets.messageIcon} alt="message-icon" />
+        <input
+          type="image"
+          src={assets.messageIcon}
+          alt="message-icon"
+          onClick={() =>
+            setShow((prevState) => {
+              const nextState = {} as IShow
+              Object.keys(prevState).forEach((key) => {
+                if (key === 'message') {
+                  nextState[key as keyof IShow] = !prevState.message
+                } else {
+                  nextState[key as keyof IShow] = false
+                }
+              })
+              return nextState
+            })
+          }
+        />
         <input type="image" src={assets.newsIcon} alt="news-icon" />
         <input
           type="image"
