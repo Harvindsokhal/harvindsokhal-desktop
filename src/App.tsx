@@ -7,6 +7,7 @@ import {
   Appstore,
   Safari,
   Message,
+  PokeMini,
 } from './components'
 import { IShow } from './interfaces/app_interfaces'
 import emailjs from '@emailjs/browser'
@@ -24,11 +25,13 @@ const App = () => {
     appstore: false,
     safari: false,
     message: false,
+    pokeMini: true,
   })
 
   return (
     <div className="container">
       <Topbar />
+      <PokeMini />
       {show.message ? <Message setShow={setShow} /> : ''}
       {show.notes ? <Notes setShow={setShow} /> : ''}
       {show.bin ? <Bin setShow={setShow} /> : ''}

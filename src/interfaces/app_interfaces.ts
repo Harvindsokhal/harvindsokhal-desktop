@@ -6,6 +6,7 @@ export interface IShow {
   appstore: boolean
   safari: boolean
   message: boolean
+  pokeMini: boolean
 }
 
 export interface IShowProps {
