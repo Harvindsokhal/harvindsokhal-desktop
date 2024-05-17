@@ -76,8 +76,6 @@ const PokeMini = () => {
       }
     }
 
-    console.log(queueRef.current)
-
     const dialogueBox = dialogueBoxRef.current
     if (dialogueBox) {
       dialogueBox.addEventListener('click', handleDialogueBoxClick)
@@ -88,7 +86,7 @@ const PokeMini = () => {
         dialogueBox.removeEventListener('click', handleDialogueBoxClick)
       }
     }
-  }, [queueRef])
+  }, [])
 
   useEffect(() => {
     if (
@@ -293,28 +291,29 @@ const PokeMini = () => {
       attacks: [attacks.Tackle],
     })
 
-    const animateBattle = () => {
-      const battleAnimationId = window.requestAnimationFrame(animateBattle)
-      battleBackgrond.draw(ctx)
+    let buttonsCreated = false
 
-      const renderedSprites = [weedle, charmander]
-      renderedSprites.forEach((sprites) => {
-        sprites.draw(ctx)
-      })
+    const createButtons = (
+      battleAnimationId: number,
+      renderedSprites: Sprite[]
+    ) => {
+      dialogueBox.style.display = 'none'
+      attacksBox.replaceChildren()
 
       userInterface.style.display = 'block'
-      dialogueBox.style.display = 'none'
-      enemyHealthBar.style.width = '100%'
-      playerHealthBar.style.width = '100%'
-      attacksBox.replaceChildren()
 
       charmander.attacks.forEach((attack) => {
         const button = document.createElement('button')
         button.innerHTML = attack.name
         attacksBox.append(button)
-      })
 
-      document.querySelectorAll('button').forEach((button) => {
+        button.addEventListener('mouseenter', (e: MouseEvent) => {
+          const selectedAttack =
+            attacks[(e.currentTarget as HTMLButtonElement).innerHTML]
+          attackType.innerHTML = selectedAttack.type
+          attackType.style.color = selectedAttack.color
+        })
+
         button.addEventListener('click', (e: MouseEvent) => {
           const selectedAttack =
             attacks[(e.target as HTMLButtonElement).innerHTML]
@@ -322,11 +321,14 @@ const PokeMini = () => {
             attack: selectedAttack,
             recipiant: weedle,
             renderedSprites,
+            dialogueBox,
+            playerHealthBar,
+            enemyHealthBar,
           })
 
           if (weedle.health <= 0) {
             queueRef.current.push(() => {
-              weedle.faint()
+              weedle.faint(dialogueBox)
             })
 
             queueRef.current.push(() => {
@@ -334,8 +336,8 @@ const PokeMini = () => {
                 opacity: 1,
                 onComplete: () => {
                   cancelAnimationFrame(battleAnimationId)
-                  animate()
                   userInterface.style.display = 'none'
+                  animate()
 
                   gsap.to('#overlappingDiv', {
                     opacity: 0,
@@ -355,20 +357,23 @@ const PokeMini = () => {
               attack: randomAttack,
               recipiant: charmander,
               renderedSprites,
+              dialogueBox,
+              playerHealthBar,
+              enemyHealthBar,
             })
           })
 
           if (charmander.health <= 0) {
             queueRef.current.push(() => {
-              charmander.faint()
+              charmander.faint(dialogueBox)
             })
             queueRef.current.push(() => {
               gsap.to('#overlappingDiv', {
                 opacity: 1,
                 onComplete: () => {
                   cancelAnimationFrame(battleAnimationId)
-                  animate()
                   userInterface.style.display = 'none'
+                  animate()
 
                   gsap.to('#overlappingDiv', {
                     opacity: 0,
@@ -380,13 +385,25 @@ const PokeMini = () => {
             audio.Map.play()
           }
         })
-        button.addEventListener('mouseenter', (e: MouseEvent) => {
-          const selectedAttack =
-            attacks[(e.currentTarget as HTMLButtonElement).innerHTML]
-          attackType.innerHTML = selectedAttack.type
-          attackType.style.color = selectedAttack.color
-        })
       })
+    }
+
+    const animateBattle = () => {
+      const battleAnimationId = window.requestAnimationFrame(animateBattle)
+      battleBackgrond.draw(ctx)
+
+      const renderedSprites = [weedle, charmander]
+      renderedSprites.forEach((sprites) => {
+        sprites.draw(ctx)
+      })
+
+      enemyHealthBar.style.width = '100%'
+      playerHealthBar.style.width = '100%'
+
+      if (!buttonsCreated) {
+        createButtons(battleAnimationId, renderedSprites)
+        buttonsCreated = true
+      }
     }
 
     const animate = () => {
@@ -591,6 +608,7 @@ const PokeMini = () => {
           })
       }
     }
+
     animate()
 
     return () => {
@@ -715,7 +733,6 @@ const PokeMini = () => {
               left: 0,
               backgroundColor: 'white',
               padding: '12px',
-              display: 'none',
               cursor: 'pointer',
             }}
           >

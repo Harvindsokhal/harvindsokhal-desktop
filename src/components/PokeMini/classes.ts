@@ -161,8 +161,8 @@ export class Monster extends Sprite {
     this.attacks = attacks
   }
 
-  faint() {
-    //document.querySelector('#dialogueBox').innerHTML = this.name + ' fainted!'
+  faint(dialogueBox: HTMLElement) {
+    dialogueBox.innerHTML = this.name + ' fainted!'
     gsap.to(this.position, {
       y: this.position.y + 20,
     })
@@ -177,16 +177,21 @@ export class Monster extends Sprite {
     attack,
     recipiant,
     renderedSprites,
+    dialogueBox,
+    playerHealthBar,
+    enemyHealthBar,
   }: {
     attack: Attack
     recipiant: Monster
     renderedSprites: Sprite[]
+    dialogueBox: HTMLElement
+    playerHealthBar: HTMLElement
+    enemyHealthBar: HTMLElement
   }) {
-    //document.querySelector('#dialogueBox').style.display = 'block'
-    // document.querySelector('#dialogueBox').innerHTML =
-    //   this.name + ' used ' + attack.name
-    let healthBar = '#enemyHealthBar'
-    if (this.isEnemy) healthBar = '#playerHealthBar'
+    dialogueBox.style.display = 'block'
+    dialogueBox.innerHTML = this.name + ' used ' + attack.name
+    let healthBar = enemyHealthBar
+    if (this.isEnemy) healthBar = playerHealthBar
 
     let rotation = 1
     if (this.isEnemy) rotation = -2.2
@@ -197,7 +202,7 @@ export class Monster extends Sprite {
       case 'Fireball':
         audio.initFireball.play()
         const fireballImage = new Image()
-        fireballImage.src = './assets/fireball.png'
+        fireballImage.src = require('./assets/fireball.png')
 
         const fireball = new Sprite({
           position: {
