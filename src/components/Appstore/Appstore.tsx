@@ -1,10 +1,24 @@
 import Draggable from 'react-draggable'
 import { appStoreAssets } from '../../assets'
 import { FunctionComponent } from 'react'
-import { IShowProps } from '../../interfaces/app_interfaces'
+import { IShow, IShowProps } from '../../interfaces/app_interfaces'
 import './Appstore.scss'
 
 const Appstore: FunctionComponent<IShowProps> = ({ setShow }) => {
+  const handlePokeMiniToggle = () => {
+    setShow((prevState) => {
+      const nextState = {} as IShow
+      Object.keys(prevState).forEach((key) => {
+        if (key === 'pokeMini') {
+          nextState[key as keyof IShow] = !prevState.pokeMini
+        } else {
+          nextState[key as keyof IShow] = false
+        }
+      })
+      return nextState
+    })
+  }
+
   return (
     <Draggable>
       <div className="app-store-main">
@@ -144,7 +158,7 @@ const Appstore: FunctionComponent<IShowProps> = ({ setShow }) => {
                 <div className="text-container top">
                   <p id="des1">Pokemini</p>
                   <p id="des2">A Custom Pokemon game</p>
-                  <div className="open-app">
+                  <div className="open-app" onClick={handlePokeMiniToggle}>
                     <p>Open</p>
                   </div>
                 </div>

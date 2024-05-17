@@ -25,13 +25,13 @@ const App = () => {
     appstore: false,
     safari: false,
     message: false,
-    pokeMini: true,
+    pokeMini: false,
   })
 
   return (
     <div className="container">
       <Topbar />
-      <PokeMini />
+      {show.pokeMini ? <PokeMini setShow={setShow} /> : ''}
       {show.message ? <Message setShow={setShow} /> : ''}
       {show.notes ? <Notes setShow={setShow} /> : ''}
       {show.bin ? <Bin setShow={setShow} /> : ''}

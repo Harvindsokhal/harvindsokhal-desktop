@@ -1,12 +1,15 @@
-import { useEffect, useRef, useState } from 'react'
+import { FunctionComponent, useEffect, useRef, useState } from 'react'
 import { Sprite, Boundary, Rectangle, Monster } from './classes'
 import { collisions } from './data/collisions'
 import { battleZonesData } from './data/battleZones'
 import { audio } from './data/audio'
-import gsap from 'gsap'
 import { attacks } from './data/attacks'
+import Draggable from 'react-draggable'
+import gsap from 'gsap'
+import './PokeMini.scss'
+import { IShowProps } from '../../interfaces/app_interfaces'
 
-const PokeMini = () => {
+const PokeMini: FunctionComponent<IShowProps> = ({ setShow }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [keys] = useState({ w: false, a: false, s: false, d: false })
 
@@ -627,156 +630,176 @@ const PokeMini = () => {
   }, [keys, queueRef])
 
   return (
-    <div style={{ display: 'inline-block', position: 'relative' }}>
-      <div
-        id="overlappingDiv"
-        style={{
-          backgroundColor: 'black',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          opacity: 0,
-          pointerEvents: 'none',
-          zIndex: 10,
-        }}
-      ></div>
-
-      <canvas ref={canvasRef}></canvas>
-
-      <div
-        ref={userInterfaceRef}
-        id="userInterface"
-        style={{ display: 'none' }}
-      >
-        <div
-          style={{
-            backgroundColor: 'white',
-            width: '250px',
-            position: 'absolute',
-            top: '50px',
-            left: '50px',
-            border: '4px black solid',
-            padding: '12px',
-          }}
-        >
-          <h1 style={{ fontSize: '16px' }}>Weedle</h1>
-          <div style={{ position: 'relative' }}>
+    <Draggable>
+      <div className="pokemini-container">
+        <div className="pokemini-taskbar">
+          <div className="dots-container">
             <div
-              style={{
-                height: '5px',
-                backgroundColor: 'red',
-                marginTop: '10px',
-              }}
-            ></div>
-            <div
-              ref={enemyHealthBarRef}
-              id="enemyHealthBar"
-              style={{
-                height: '5px',
-                backgroundColor: 'green',
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-              }}
-            ></div>
+              id="dot-one"
+              className="browser-dot"
+              onClick={() =>
+                setShow((prevState) => {
+                  return { ...prevState, pokeMini: !prevState.pokeMini }
+                })
+              }
+            />
+            <div id="dot-two" className="browser-dot" />
+            <div id="dot-three" className="browser-dot" />
           </div>
+          <p>PokiMini</p>
         </div>
-
-        <div
-          style={{
-            backgroundColor: 'white',
-            width: '250px',
-            position: 'absolute',
-            top: '330px',
-            right: '50px',
-            border: '4px black solid',
-            padding: '12px',
-          }}
-        >
-          <h1 style={{ fontSize: '16px' }}>Charmander</h1>
-          <div style={{ position: 'relative' }}>
-            <div
-              style={{
-                height: '5px',
-                backgroundColor: 'red',
-                marginTop: '10px',
-              }}
-            ></div>
-            <div
-              ref={playerHealthBarRef}
-              id="playerHealthBar"
-              style={{
-                height: '5px',
-                backgroundColor: 'green',
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-              }}
-            ></div>
-          </div>
-        </div>
-
-        <div
-          style={{
-            display: 'flex',
-            backgroundColor: 'white',
-            height: '140px',
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            right: 0,
-            borderTop: '4px black solid',
-          }}
-        >
+        <div style={{ display: 'inline-block', position: 'relative' }}>
           <div
-            ref={dialogueBoxRef}
-            id="dialogueBox"
+            id="overlappingDiv"
             style={{
+              backgroundColor: 'black',
               position: 'absolute',
               top: 0,
+              left: 0,
               right: 0,
               bottom: 0,
-              left: 0,
-              backgroundColor: 'white',
-              padding: '12px',
-              cursor: 'pointer',
-            }}
-          >
-            test
-          </div>
-          <div
-            ref={attacksBoxRef}
-            id="attacksBox"
-            style={{
-              width: '66.66%',
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
+              opacity: 0,
+              pointerEvents: 'none',
+              zIndex: 10,
             }}
           ></div>
+
+          <canvas ref={canvasRef}></canvas>
+
           <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '33.33%',
-              borderLeft: '4px black solid',
-            }}
+            ref={userInterfaceRef}
+            id="userInterface"
+            style={{ display: 'none' }}
           >
-            <h1
-              ref={attackTypeRef}
-              id="attackType"
-              style={{ fontSize: '16px' }}
+            <div
+              style={{
+                backgroundColor: 'white',
+                width: '250px',
+                position: 'absolute',
+                top: '50px',
+                left: '50px',
+                border: '4px black solid',
+                padding: '12px',
+              }}
             >
-              Attack Type
-            </h1>
+              <h1 style={{ fontSize: '16px' }}>Weedle</h1>
+              <div style={{ position: 'relative' }}>
+                <div
+                  style={{
+                    height: '5px',
+                    backgroundColor: 'red',
+                    marginTop: '10px',
+                  }}
+                ></div>
+                <div
+                  ref={enemyHealthBarRef}
+                  id="enemyHealthBar"
+                  style={{
+                    height: '5px',
+                    backgroundColor: 'green',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                  }}
+                ></div>
+              </div>
+            </div>
+
+            <div
+              style={{
+                backgroundColor: 'white',
+                width: '250px',
+                position: 'absolute',
+                top: '330px',
+                right: '50px',
+                border: '4px black solid',
+                padding: '12px',
+              }}
+            >
+              <h1 style={{ fontSize: '16px' }}>Charmander</h1>
+              <div style={{ position: 'relative' }}>
+                <div
+                  style={{
+                    height: '5px',
+                    backgroundColor: 'red',
+                    marginTop: '10px',
+                  }}
+                ></div>
+                <div
+                  ref={playerHealthBarRef}
+                  id="playerHealthBar"
+                  style={{
+                    height: '5px',
+                    backgroundColor: 'green',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                  }}
+                ></div>
+              </div>
+            </div>
+
+            <div
+              style={{
+                display: 'flex',
+                backgroundColor: 'white',
+                height: '140px',
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                borderTop: '4px black solid',
+              }}
+            >
+              <div
+                ref={dialogueBoxRef}
+                id="dialogueBox"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                  backgroundColor: 'white',
+                  padding: '12px',
+                  cursor: 'pointer',
+                }}
+              >
+                test
+              </div>
+              <div
+                ref={attacksBoxRef}
+                id="attacksBox"
+                style={{
+                  width: '66.66%',
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(2, 1fr)',
+                }}
+              ></div>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '33.33%',
+                  borderLeft: '4px black solid',
+                }}
+              >
+                <h1
+                  ref={attackTypeRef}
+                  id="attackType"
+                  style={{ fontSize: '16px' }}
+                >
+                  Attack Type
+                </h1>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Draggable>
   )
 }
 
