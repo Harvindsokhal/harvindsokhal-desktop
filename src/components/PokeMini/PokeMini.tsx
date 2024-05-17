@@ -301,6 +301,8 @@ const PokeMini = () => {
       attacksBox.replaceChildren()
 
       userInterface.style.display = 'block'
+      enemyHealthBar.style.width = '100%'
+      playerHealthBar.style.width = '100%'
 
       charmander.attacks.forEach((attack) => {
         const button = document.createElement('button')
@@ -329,6 +331,7 @@ const PokeMini = () => {
           if (weedle.health <= 0) {
             queueRef.current.push(() => {
               weedle.faint(dialogueBox)
+              queueRef.current.pop()
             })
 
             queueRef.current.push(() => {
@@ -336,6 +339,7 @@ const PokeMini = () => {
                 opacity: 1,
                 onComplete: () => {
                   cancelAnimationFrame(battleAnimationId)
+                  dialogueBox.style.display = 'none'
                   userInterface.style.display = 'none'
                   animate()
 
@@ -373,6 +377,7 @@ const PokeMini = () => {
                 onComplete: () => {
                   cancelAnimationFrame(battleAnimationId)
                   userInterface.style.display = 'none'
+                  dialogueBox.style.display = 'none'
                   animate()
 
                   gsap.to('#overlappingDiv', {
@@ -391,14 +396,19 @@ const PokeMini = () => {
     const animateBattle = () => {
       const battleAnimationId = window.requestAnimationFrame(animateBattle)
       battleBackgrond.draw(ctx)
-
       const renderedSprites = [weedle, charmander]
       renderedSprites.forEach((sprites) => {
         sprites.draw(ctx)
       })
 
-      enemyHealthBar.style.width = '100%'
-      playerHealthBar.style.width = '100%'
+      if (battle.initiated) {
+        userInterface.style.display = 'block'
+      }
+
+      if (!battle.initiated) {
+        playerHealthBar.style.width = `${charmander.health}%`
+        enemyHealthBar.style.width = `${weedle.health}%`
+      }
 
       if (!buttonsCreated) {
         createButtons(battleAnimationId, renderedSprites)

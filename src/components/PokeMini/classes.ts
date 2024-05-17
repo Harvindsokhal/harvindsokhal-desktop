@@ -135,6 +135,7 @@ export class Monster extends Sprite {
   isEnemy: boolean
   health: number
   attacks: Attack[]
+  initialHealth: number
 
   constructor({
     position,
@@ -159,6 +160,12 @@ export class Monster extends Sprite {
     this.isEnemy = isEnemy
     this.health = 100
     this.attacks = attacks
+
+    this.initialHealth = this.health
+  }
+
+  resetStats() {
+    this.health = this.initialHealth
   }
 
   faint(dialogueBox: HTMLElement) {
@@ -168,6 +175,16 @@ export class Monster extends Sprite {
     })
     gsap.to(this, {
       opacity: 0,
+      duration: 5,
+      onComplete: () => {
+        this.resetStats()
+        gsap.to(this, {
+          opacity: 1,
+        })
+        gsap.to(this.position, {
+          y: this.position.y - 20,
+        })
+      },
     })
     audio.battle.stop()
     audio.victory.play()
