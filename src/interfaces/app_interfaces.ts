@@ -7,6 +7,7 @@ export interface IShow {
   safari: boolean
   message: boolean
   pokeMini: boolean
+  snakeGame: boolean
 }
 
 export interface IShowProps {

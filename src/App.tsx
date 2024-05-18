@@ -12,6 +12,7 @@ import {
 import { IShow } from './interfaces/app_interfaces'
 import emailjs from '@emailjs/browser'
 import './App.scss'
+import SnakeGame from './components/SnakeGame/SnakeGame'
 
 const App = () => {
   const emailjsPulicKey: string = process.env
@@ -26,11 +27,13 @@ const App = () => {
     safari: false,
     message: false,
     pokeMini: false,
+    snakeGame: true,
   })
 
   return (
     <div className="container">
       <Topbar />
+      {show.snakeGame ? <SnakeGame setShow={setShow} /> : ''}
       {show.pokeMini ? <PokeMini setShow={setShow} /> : ''}
       {show.message ? <Message setShow={setShow} /> : ''}
       {show.notes ? <Notes setShow={setShow} /> : ''}

@@ -19,6 +19,20 @@ const Appstore: FunctionComponent<IShowProps> = ({ setShow }) => {
     })
   }
 
+  const handleSnakeGameToggle = () => {
+    setShow((prevState) => {
+      const nextState = {} as IShow
+      Object.keys(prevState).forEach((key) => {
+        if (key === 'snakeGame') {
+          nextState[key as keyof IShow] = !prevState.snakeGame
+        } else {
+          nextState[key as keyof IShow] = false
+        }
+      })
+      return nextState
+    })
+  }
+
   return (
     <Draggable>
       <div className="app-store-main">
@@ -190,7 +204,7 @@ const Appstore: FunctionComponent<IShowProps> = ({ setShow }) => {
                 <div className="text-container">
                   <p id="des1">Snake Game</p>
                   <p id="des2">A JSX Snake Game</p>
-                  <div className="open-app">
+                  <div className="open-app" onClick={handleSnakeGameToggle}>
                     <p>Open</p>
                   </div>
                 </div>
