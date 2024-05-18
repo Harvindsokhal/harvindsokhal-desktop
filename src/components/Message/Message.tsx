@@ -120,6 +120,7 @@ const Message: FunctionComponent<IShowProps> = ({ setShow }) => {
               alt="appstore-icon"
             />
             <input
+              autoComplete="off"
               value={typeMessage}
               disabled={sent}
               id="message-text"
