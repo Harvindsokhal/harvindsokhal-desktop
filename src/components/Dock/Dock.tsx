@@ -63,7 +63,6 @@ const Dock: FunctionComponent<IShowProps> = ({ setShow }) => {
               const nextState = {} as IShow
               Object.keys(prevState).forEach((key) => {
                 if (key === 'notes') {
-                  //preLoadNotes()
                   nextState[key as keyof IShow] = !prevState.notes
                 } else {
                   nextState[key as keyof IShow] = false
