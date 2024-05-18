@@ -11,7 +11,7 @@ const Message: FunctionComponent<IShowProps> = ({ setShow }) => {
   const [typeMessage, setTypeMessage] = useState('')
   const [sent, setSent] = useState(false)
 
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTypeMessage(e.target.value)
     setMessage(e.target.value)
   }
@@ -119,7 +119,7 @@ const Message: FunctionComponent<IShowProps> = ({ setShow }) => {
               src={messageAssets.messageAppstoreIcon}
               alt="appstore-icon"
             />
-            <textarea
+            <input
               value={typeMessage}
               disabled={sent}
               id="message-text"

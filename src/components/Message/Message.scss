@@ -254,8 +254,9 @@
         height: 30px;
         width: 35px;
       }
-      textarea {
+      input {
         border-radius: 10px;
+        padding: 0 10px;
         margin-left: 10px;
         min-width: 460px;
         min-height: 25px;
@@ -266,10 +267,6 @@
         font-weight: 600;
         resize: none;
         caret-color: white;
-
-        &::placeholder {
-          transform: translateY(5px);
-        }
 
         @keyframes blink-empty {
           30%,
@@ -294,7 +291,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 15px;
+        margin-right: 10px;
         border-radius: 50px;
         width: 50px;
         background-color: rgb(0, 128, 255);
