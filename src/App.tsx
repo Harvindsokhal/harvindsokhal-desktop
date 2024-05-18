@@ -27,7 +27,7 @@ const App = () => {
     safari: false,
     message: false,
     pokeMini: false,
-    snakeGame: true,
+    snakeGame: false,
   })
 
   return (
