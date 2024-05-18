@@ -304,8 +304,6 @@ const PokeMini: FunctionComponent<IShowProps> = ({ setShow }) => {
       attacksBox.replaceChildren()
 
       userInterface.style.display = 'block'
-      enemyHealthBar.style.width = '100%'
-      playerHealthBar.style.width = '100%'
 
       charmander.attacks.forEach((attack) => {
         const button = document.createElement('button')
