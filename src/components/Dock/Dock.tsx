@@ -1,9 +1,22 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useEffect } from 'react'
 import { IShow, IShowProps } from '../../interfaces/app_interfaces'
+import { notesAssets } from '../../assets'
 import { assets } from '../../assets'
 import './Dock.scss'
 
 const Dock: FunctionComponent<IShowProps> = ({ setShow }) => {
+  useEffect(() => {
+    preLoadNotes()
+  }, [])
+
+  const preLoadNotes = () => {
+    const images = Object.values(notesAssets).map((asset) => asset)
+    images.forEach((image) => {
+      const img = new Image()
+      img.src = image
+    })
+  }
+
   return (
     <div className="dock">
       <div className="dock-items">
@@ -50,6 +63,7 @@ const Dock: FunctionComponent<IShowProps> = ({ setShow }) => {
               const nextState = {} as IShow
               Object.keys(prevState).forEach((key) => {
                 if (key === 'notes') {
+                  //preLoadNotes()
                   nextState[key as keyof IShow] = !prevState.notes
                 } else {
                   nextState[key as keyof IShow] = false
