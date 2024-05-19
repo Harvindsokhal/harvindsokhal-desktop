@@ -5,7 +5,6 @@ import GameOver from './GameOver.jsx'
 class SnakeGame extends React.Component {
   constructor(props) {
     super(props)
-    const { setShow } = props
     this.handleKeyDown = this.handleKeyDown.bind(this)
     this.state = {
       width: 0,

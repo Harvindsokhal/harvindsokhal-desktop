@@ -8,11 +8,11 @@ import {
   Safari,
   Message,
   PokeMini,
+  SnakeGame,
 } from './components'
 import { IShow } from './interfaces/app_interfaces'
 import emailjs from '@emailjs/browser'
 import './App.scss'
-import SnakeGame from './components/SnakeGame/SnakeGame'
 
 const App = () => {
   const emailjsPulicKey: string = process.env
