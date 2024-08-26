@@ -40,7 +40,7 @@ const App = () => {
       {show.bin ? <Bin setShow={setShow} /> : ''}
       {show.appstore ? <Appstore setShow={setShow} /> : ''}
       {show.safari ? <Safari setShow={setShow} /> : ''}
-      <Dock setShow={setShow} />
+      <Dock show={show} setShow={setShow} />
     </div>
   )
 }

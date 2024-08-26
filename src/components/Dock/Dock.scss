@@ -1,29 +1,84 @@
 .dock {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   box-sizing: border-box;
-  width: 33%;
-  background-color: rgba(99, 94, 94, 0.582);
-  height: 70px;
-  border-radius: 10px;
-  left: 0;
-  right: 0;
+  background-color: rgba(44, 44, 46, 0.75);
+  height: 75px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 15px;
   margin: 0px auto;
 
   .dock-items {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 
-    input {
-      height: 60px;
-      width: 60px;
-      margin: 3px;
-    }
+    .dock-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-    input:hover {
-      transform: translateY(-15px) scale(1.2);
-      transition: all 0.09s linear;
+      input {
+        height: 60px;
+        width: 60px;
+        margin: 3px;
+        transition: all 0.09s linear;
+      }
+
+      input:hover {
+        transform: translateY(-15px) scale(1.2);
+      }
+
+      .tooltip {
+        visibility: hidden;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        bottom: 90px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          border-width: 5px;
+          border-style: solid;
+          border-color: #333 transparent transparent transparent;
+        }
+      }
+
+      &:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .indicator-dot {
+        width: 4px;
+        height: 4px;
+        background-color: rgb(159, 159, 159);
+        border-radius: 50%;
+        position: absolute;
+        bottom: -4px;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+      }
     }
   }
 }

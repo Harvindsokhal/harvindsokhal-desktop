@@ -11,5 +11,6 @@ export interface IShow {
 }
 
 export interface IShowProps {
+  show?: IShow
   setShow: Dispatch<SetStateAction<IShow>>
 }
