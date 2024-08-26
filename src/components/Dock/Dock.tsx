@@ -1,22 +1,9 @@
-import { FunctionComponent, useEffect } from 'react'
+import { FunctionComponent } from 'react'
 import { IShow, IShowProps } from '../../interfaces/app_interfaces'
-import { notesAssets } from '../../assets'
 import { assets } from '../../assets'
 import './Dock.scss'
 
 const Dock: FunctionComponent<IShowProps> = ({ setShow }) => {
-  useEffect(() => {
-    preLoadNotes()
-  }, [])
-
-  const preLoadNotes = () => {
-    const images = Object.values(notesAssets).map((asset) => asset)
-    images.forEach((image) => {
-      const img = new Image()
-      img.src = image
-    })
-  }
-
   return (
     <div className="dock">
       <div className="dock-items">
