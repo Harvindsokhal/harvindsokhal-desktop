@@ -105,94 +105,32 @@ const Notes: FunctionComponent<IShowProps> = ({ setShow }) => {
             <h2>My Skills</h2>
             <h3>Programming languages</h3>
             <ul>
-              <li>
-                Typescript{' '}
-                <img src={notesAssets.typescriptIcon} alt="typescript-icon" />
-              </li>
-              <li>
-                HTML/CSS
-                <img src={notesAssets.htmlIcon} alt="htmlcss-icon" />
-                <img src={notesAssets.cssIcon} alt="css-icon" />
-              </li>
-              <li>
-                Kotlin {''}
-                <img src={notesAssets.kotlinIcon} alt="kotlin-icon" />
-              </li>
-              <li>
-                Python{''}
-                <img src={notesAssets.pythonIcon} alt="python-icon" />
-              </li>
-              <li>
-                Scala{''}
-                <img src={notesAssets.scalaIcon} alt="scala-icon" />
-              </li>
-              <li>
-                Java{''}
-                <img src={notesAssets.javaIcon} alt="java-icon" />
-              </li>
+              <li>Typescript </li>
+              <li>HTML/CSS</li>
+              <li>Kotlin</li>
+              <li>Python</li>
+              <li>Scala</li>
+              <li>Java</li>
             </ul>
             <h3>Frameworks</h3>
             <ul>
-              <li>
-                React
-                <img src={notesAssets.reactIcon} alt="react-icon" />
-              </li>
-              <li>
-                GraphQL
-                <img src={notesAssets.graphqlIcon} alt="graphql-icon" />
-              </li>
-              <li>
-                NestJs
-                <img src={notesAssets.nestIcon} alt="nestjs-icon" />
-              </li>
-              <li>
-                Jest
-                <img src={notesAssets.jestIcon} alt="jest-icon" />
-              </li>
-              <li>
-                Storybook
-                <img src={notesAssets.storybookIcon} alt="storybook-icon" />
-              </li>
-              <li>
-                Spring
-                <img src={notesAssets.springIcon} alt="spring-icon" />
-              </li>
+              <li>React</li>
+              <li>Vue</li>
+              <li>GraphQL</li>
+              <li>Jest</li>
+              <li>Storybook</li>
+              <li>Spring</li>
             </ul>
             <h3>Misc</h3>
             <ul>
-              <li>
-                Jira
-                <img src={notesAssets.jiraIcon} alt="jira-icon" />
-              </li>
-              <li>
-                Prettier
-                <img src={notesAssets.prettierIcon} alt="prettier-icon" />
-              </li>
-              <li>
-                ESLint
-                <img src={notesAssets.eslintIcon} alt="eslint-icon" />
-              </li>
-              <li>
-                Git
-                <img src={notesAssets.gitIcon} alt="git-icon" />
-              </li>
-              <li>
-                Docker
-                <img src={notesAssets.dockerIcon} alt="docker-icon" />
-              </li>
-              <li>
-                Kubernetes
-                <img src={notesAssets.kubernetesIcon} alt="kubernetes-icon" />
-              </li>
-              <li>
-                CircleCi
-                <img src={notesAssets.circleciIcon} alt="circleci-icon" />
-              </li>
-
-              <li>
-                Datadog
-                <img src={notesAssets.datadogIcon} alt="datadog-icon" />
-              </li>
+              <li>Jira</li>
+              <li>Prettier</li>
+              <li>ESLint</li>
+              <li>Git</li>
+              <li>Docker</li>
+              <li>Kubernetes</li>
+              <li>CircleCi</li>
+              <li>Datadog</li>
             </ul>
           </div>
         </div>

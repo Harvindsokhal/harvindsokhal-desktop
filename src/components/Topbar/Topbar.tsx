@@ -1,6 +1,5 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useLayoutEffect } from 'react'
 import { assets } from '../../assets'
-import { Dropdown } from '../../components'
 import Wifi from './Wifi'
 import './Topbar.scss'
 
@@ -12,7 +11,8 @@ const Topbar = () => {
     top: number
   } | null>(null)
 
-  const dropdownRef = useRef<HTMLParagraphElement>(null)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+  const dropdownTriggerRef = useRef<HTMLParagraphElement>(null)
 
   const weekday = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat']
   const month = [
@@ -31,14 +31,38 @@ const Topbar = () => {
   ]
 
   useEffect(() => {
-    setInterval(() => setDate(new Date()), 1000)
+    const intervalId = setInterval(() => setDate(new Date()), 1000)
+    return () => clearInterval(intervalId)
+  }, [])
+
+  useLayoutEffect(() => {
+    if (isDropdown && dropdownTriggerRef.current) {
+      const { left, top, height } =
+        dropdownTriggerRef.current.getBoundingClientRect()
+      setDropdownPosition({ left, top: top + height })
+    }
+  }, [isDropdown])
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node) &&
+        dropdownTriggerRef.current &&
+        !dropdownTriggerRef.current.contains(e.target as Node)
+      ) {
+        setIsDropdown(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
   }, [])
 
   const showDropdown = (e: React.MouseEvent<HTMLParagraphElement>) => {
-    if (dropdownRef.current) {
-      const { left, top, height } = dropdownRef.current.getBoundingClientRect()
-      setDropdownPosition({ left, top: top + height })
-    }
+    e.stopPropagation()
     setIsDropdown(!isDropdown)
   }
 
@@ -47,7 +71,7 @@ const Topbar = () => {
       <div className="Top-items-left">
         <img src={assets.appleLogo} alt="AppleLogo" className="apple-icon" />
         <p className="Finder">Finder</p>
-        <p onClick={showDropdown} ref={dropdownRef}>
+        <p onClick={showDropdown} ref={dropdownTriggerRef}>
           File
         </p>
         <p>Edit</p>
@@ -63,6 +87,7 @@ const Topbar = () => {
               left: dropdownPosition.left + 'px',
               top: dropdownPosition.top + 'px',
             }}
+            ref={dropdownRef}
           >
             <ul>
               <li>New Finder Window</li>
