@@ -1,8 +1,8 @@
-import { FunctionComponent } from "react";
-import { IShowProps } from "../../interfaces/app_interfaces";
-import Draggable from "react-draggable";
-import { assets } from "../../assets";
-import "./Bin.scss";
+import { FunctionComponent } from 'react'
+import { IShowProps } from '../../interfaces/app_interfaces'
+import Draggable from 'react-draggable'
+import { assets } from '../../assets'
+import './Bin.scss'
 
 const Bin: FunctionComponent<IShowProps> = ({ setShow }) => {
   return (
@@ -12,7 +12,7 @@ const Bin: FunctionComponent<IShowProps> = ({ setShow }) => {
           <div
             onClick={() =>
               setShow((prevState) => {
-                return { ...prevState, bin: !prevState.bin };
+                return { ...prevState, bin: !prevState.bin }
               })
             }
             id="dot-one"
@@ -30,7 +30,7 @@ const Bin: FunctionComponent<IShowProps> = ({ setShow }) => {
         </div>
       </div>
     </Draggable>
-  );
-};
+  )
+}
 
-export default Bin;
+export default Bin

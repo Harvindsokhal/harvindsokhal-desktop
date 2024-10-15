@@ -71,7 +71,11 @@ const Topbar = () => {
       <div className="Top-items-left">
         <img src={assets.appleLogo} alt="AppleLogo" className="apple-icon" />
         <p className="Finder">Finder</p>
-        <p onClick={showDropdown} ref={dropdownTriggerRef}>
+        <p
+          className={isDropdown ? 'active' : ''}
+          onClick={showDropdown}
+          ref={dropdownTriggerRef}
+        >
           File
         </p>
         <p>Edit</p>

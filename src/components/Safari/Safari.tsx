@@ -40,8 +40,8 @@ const Safari: FunctionComponent<IShowProps> = ({ setShow }) => {
               {showSocial.x
                 ? 'twitter.com'
                 : showSocial.linkedin
-                ? 'linkedin.com'
-                : 'threads.net'}
+                  ? 'linkedin.com'
+                  : 'threads.net'}
             </p>
             <img
               id="refresh"

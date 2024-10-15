@@ -1,22 +1,22 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 interface DropwdownState {
-  section: string | null;
+  section: string | null
 }
 
 const initialState: DropwdownState = {
   section: null,
-};
+}
 
 const dropdownSlice = createSlice({
-  name: "dropdown",
+  name: 'dropdown',
   initialState,
   reducers: {
     setSection: (state, action: PayloadAction<string | null>) => {
-      state.section = action.payload;
+      state.section = action.payload
     },
   },
-});
+})
 
-export const { setSection } = dropdownSlice.actions;
-export default dropdownSlice.reducer;
+export const { setSection } = dropdownSlice.actions
+export default dropdownSlice.reducer

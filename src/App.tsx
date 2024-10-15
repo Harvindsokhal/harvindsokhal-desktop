@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 import {
   Topbar,
   Dock,
@@ -9,18 +9,18 @@ import {
   Message,
   PokeMini,
   SnakeGame,
-} from "./components";
-import { IShow } from "./interfaces/app_interfaces";
-import emailjs from "@emailjs/browser";
-import { Provider } from "react-redux";
-import { store } from "./store";
-import "./App.scss";
+} from './components'
+import { IShow } from './interfaces/app_interfaces'
+import emailjs from '@emailjs/browser'
+import { Provider } from 'react-redux'
+import { store } from './store'
+import './App.scss'
 
 const App = () => {
   const emailjsPulicKey: string = process.env
-    .REACT_APP_EMAIL_PUBLIC_KEY as string;
+    .REACT_APP_EMAIL_PUBLIC_KEY as string
 
-  useEffect(() => emailjs.init(emailjsPulicKey));
+  useEffect(() => emailjs.init(emailjsPulicKey))
 
   const [show, setShow] = useState<IShow>({
     notes: false,
@@ -30,23 +30,23 @@ const App = () => {
     message: false,
     pokeMini: false,
     snakeGame: false,
-  });
+  })
 
   return (
     <Provider store={store}>
       <div className="container">
         <Topbar />
-        {show.snakeGame ? <SnakeGame setShow={setShow} /> : ""}
-        {show.pokeMini ? <PokeMini setShow={setShow} /> : ""}
-        {show.message ? <Message setShow={setShow} /> : ""}
-        {show.notes ? <Notes setShow={setShow} /> : ""}
-        {show.bin ? <Bin setShow={setShow} /> : ""}
-        {show.appstore ? <Appstore setShow={setShow} /> : ""}
-        {show.safari ? <Safari setShow={setShow} /> : ""}
+        {show.snakeGame ? <SnakeGame setShow={setShow} /> : ''}
+        {show.pokeMini ? <PokeMini setShow={setShow} /> : ''}
+        {show.message ? <Message setShow={setShow} /> : ''}
+        {show.notes ? <Notes setShow={setShow} /> : ''}
+        {show.bin ? <Bin setShow={setShow} /> : ''}
+        {show.appstore ? <Appstore setShow={setShow} /> : ''}
+        {show.safari ? <Safari setShow={setShow} /> : ''}
         <Dock show={show} setShow={setShow} />
       </div>
     </Provider>
-  );
-};
+  )
+}
 
-export default App;
+export default App
