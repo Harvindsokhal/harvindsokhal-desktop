@@ -71,6 +71,55 @@
       font-size: 15px;
     }
 
+    .battery {
+      position: relative;
+      width: 19px;
+      height: 9px;
+      border: 1.5px solid rgba(153, 153, 153, 0.9);
+      border-radius: 3px;
+    }
+
+    .battery::before {
+      content: '';
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      height: 7px;
+      border-radius: 1px;
+      background-color: rgb(50, 230, 116);
+      animation: full 5s linear infinite;
+    }
+
+    .battery::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 4px;
+      right: -3.5px;
+      top: 2.5px;
+      background-color: rgba(153, 153, 153, 0.9);
+      border-bottom-right-radius: 2px;
+      border-top-right-radius: 2px;
+    }
+
+    @keyframes full {
+      0% {
+        width: 0%;
+      }
+      25% {
+        width: 24%;
+      }
+      50% {
+        width: 48%;
+      }
+      75% {
+        width: 72%;
+      }
+      100% {
+        width: 94%;
+      }
+    }
+
     .time {
       padding-left: 7px;
       padding-right: 15px;
