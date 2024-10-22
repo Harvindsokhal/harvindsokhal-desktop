@@ -164,8 +164,7 @@ const Topbar = () => {
       <div className="Top-items-right">
         <Wifi />
         <img src={assets.airplayIcon} alt="airplay-logo" />
-        <div className="battery"></div>
-        {/* <img src={assets.batteryIcon} alt="battery-logo" /> */}
+        <div className="battery" />
         <img src={assets.searchIcon} alt="search-logo" />
         <p>{weekday[date.getDay()]}</p>
         <p>{date.getDate()}</p>
