@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.10a65617.css",
-    "main.js": "/static/js/main.6adfa5fb.js",
+    "main.js": "/static/js/main.83956d38.js",
     "static/media/background.jpg": "/static/media/background.ea33a6f988b809646a12.jpg",
     "static/media/safari-icon.png": "/static/media/safari-icon.0a898254a8dd99a0146a.png",
     "static/media/x-screenshot.png": "/static/media/x-screenshot.f33f0837fc8820d4a758.png",
@@ -34,7 +34,7 @@
     "static/media/scrapper.png": "/static/media/scrapper.2d3502e125ccdba74db0.png",
     "static/media/eslintIcon.png": "/static/media/eslintIcon.44b6cc7f223f80228cde.png",
     "static/media/foreground.png": "/static/media/foreground.7a10c7e73ab76be54be9.png",
-    "static/media/profile-store.png": "/static/media/profile-store.652e46c34901c566c50c.png",
+    "static/media/Profile-store.png": "/static/media/Profile-store.652e46c34901c566c50c.png",
     "static/media/pokemon.jpeg": "/static/media/pokemon.d1be0895b8c9cacba2be.jpeg",
     "static/media/battleBackground.png": "/static/media/battleBackground.02a945fa2966049a75d9.png",
     "static/media/ACharRight.png": "/static/media/ACharRight.20b346f9d12f6fa20ed0.png",
@@ -53,10 +53,10 @@
     "static/media/jiraIcon.svg": "/static/media/jiraIcon.1b79d9d02350c124716652a3e72b8376.svg",
     "index.html": "/index.html",
     "main.10a65617.css.map": "/static/css/main.10a65617.css.map",
-    "main.6adfa5fb.js.map": "/static/js/main.6adfa5fb.js.map"
+    "main.83956d38.js.map": "/static/js/main.83956d38.js.map"
   },
   "entrypoints": [
     "static/css/main.10a65617.css",
-    "static/js/main.6adfa5fb.js"
+    "static/js/main.83956d38.js"
   ]
 }
