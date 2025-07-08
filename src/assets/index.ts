@@ -48,7 +48,7 @@ export const appStoreAssets = {
   developIcon: require('./Develop-store.png'),
   categoriesIcon: require('./Catagories-store.png'),
   updateIcon: require('./Updates-store.png'),
-  profileIcon: require('./profile-store.png'),
+  profileIcon: require('./Profile-store.png'),
   highlight1: require('./highlight1.png'),
   highlight2: require('./highlight2.jpeg'),
   flappyBirdIcon: require('./flappy-bird.png'),
